@@ -31,12 +31,11 @@ void LinkedList::append(std::string data) {
 
 void LinkedList::prepend(std::string data) {
     Node *tmp = new Node(data); // create new node
- 
+    tmp->next = head; // set tmp's next to current head
+    
     if (head == nullptr) { // check if list is empty
         tail = tmp; // if empty, set tail to new node
     }
-
-    tmp->next = head; // set tmp's next to current head
 
     head = tmp; // set head to new node
 }
